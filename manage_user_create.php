@@ -121,11 +121,11 @@ lang_pop();
 form_security_purge( 'manage_user_create' );
 
 if( $t_cookie === false ) {
-	$t_redirect_url = 'manage_user_page.php';
+	$t_redirect_url = helper_mantis_url('manage_user_page.php');
 } else {
 	# ok, we created the user, get the row again
 	$t_user_id = user_get_id_by_name( $f_username );
-	$t_redirect_url = 'manage_user_edit_page.php?user_id=' . $t_user_id;
+	$t_redirect_url = helper_mantis_url('manage_user_edit_page.php?user_id=' . $t_user_id);
 }
 
 layout_page_header( null, $t_redirect_url );

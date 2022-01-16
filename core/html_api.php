@@ -1020,7 +1020,7 @@ function html_button_bug_change_status( BugData $p_bug ) {
 		$t_default = key( $t_enum_list );
 		ksort( $t_enum_list );
 
-		echo '<form method="post" action="bug_change_status_page.php" class="form-inline">';
+		echo '<form method="post" action="<?php echo helper_mantis_url("bug_change_status_page.php"); ?>" class="form-inline">';
 		# CSRF protection not required here - form does not result in modifications
 
 		$t_button_text = lang_get( 'bug_status_to_button' );
@@ -1085,7 +1085,7 @@ function html_button_bug_assign_to( BugData $p_bug ) {
 		}
 	}
 
-	echo '<form method="post" action="bug_update.php" class="form-inline">';
+	echo '<form method="post" action="<?php echo helper_mantis_url("bug_update.php"); ?>" class="form-inline">';
 	echo form_security_field( 'bug_update' );
 	echo '<input type="hidden" name="last_updated" value="' . $p_bug->last_updated . '" />';
 	echo '<input type="hidden" name="action_type" value="' . BUG_UPDATE_TYPE_ASSIGN . '" />';

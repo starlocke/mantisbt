@@ -102,7 +102,7 @@ print_manage_menu( 'manage_custom_field_page.php' );
 	</div>
 </div>
 <div class="widget-toolbox padding-8 clearfix">
-	<form method="post" action="manage_custom_field_create.php" class="form-inline">
+	<form method="post" action="<?php echo helper_mantis_url("manage_custom_field_create.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php echo form_security_field( 'manage_custom_field_create' ); ?>
 			<input type="text" class="input-sm" name="name" size="32" maxlength="64" />

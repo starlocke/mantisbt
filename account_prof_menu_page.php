@@ -90,7 +90,7 @@ if( $g_global_profiles ) {
 <div class="col-md-12 col-xs-12">
 <div class="space-10"></div>
 <div id="account-profile-div" class="form-container">
-	<form id="account-profile-form" method="post" action="account_prof_update.php">
+	<form id="account-profile-form" method="post" action="<?php echo helper_mantis_url("account_prof_update.php"); ?>">
 		<fieldset>
 
 <div class="widget-box widget-color-blue2">
@@ -164,7 +164,7 @@ if( $g_global_profiles ) {
 <div class="space-10"></div>
 
 <div id="account-profile-update-div" class="form-container">
-	<form id="account-profile-update-form" method="post" action="account_prof_update.php">
+	<form id="account-profile-update-form" method="post" action="<?php echo helper_mantis_url("account_prof_update.php"); ?>">
 		<div class="widget-box widget-color-blue2">
 			<div class="widget-header widget-header-small">
 				<h4 class="widget-title lighter">

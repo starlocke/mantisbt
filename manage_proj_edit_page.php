@@ -95,7 +95,7 @@ print_manage_menu( 'manage_proj_edit_page.php' );
 <div class="col-md-12 col-xs-12">
 	<div class="space-10"></div>
 	<div id="manage-proj-update-div" class="form-container">
-	<form id="manage-proj-update-form" method="post" action="manage_proj_update.php">
+	<form id="manage-proj-update-form" method="post" action="<?php echo helper_mantis_url("manage_proj_update.php"); ?>">
 <div class="widget-box widget-color-blue2">
 <div class="widget-header widget-header-small">
 <h4 class="widget-title lighter">
@@ -210,7 +210,7 @@ print_manage_menu( 'manage_proj_edit_page.php' );
 # You must have global permissions to delete projects
 if( access_has_global_level ( config_get( 'delete_project_threshold' ) ) ) { ?>
 <div id="project-delete-div" class="form-container">
-	<form id="project-delete-form" method="post" action="manage_proj_delete.php" class="pull-right">
+	<form id="project-delete-form" method="post" action="<?php echo helper_mantis_url("manage_proj_delete.php"); ?>" class="pull-right">
 		<fieldset>
 			<?php echo form_security_field( 'manage_proj_delete' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -243,7 +243,7 @@ if ( config_get( 'subprojects_enabled') == ON ) {
 				null, null, 'btn btn-sm btn-primary btn-white btn-round' );
 		} ?>
 	</div>
-		<form id="manage-project-subproject-add-form" method="post" action="manage_proj_subproj_add.php" class="form-inline">
+		<form id="manage-project-subproject-add-form" method="post" action="<?php echo helper_mantis_url("manage_proj_subproj_add.php"); ?>" class="form-inline">
 			<div class="widget-body">
 			<div class="widget-main">
 			<fieldset>
@@ -278,7 +278,7 @@ if ( config_get( 'subprojects_enabled') == ON ) {
 	if( array() != $t_subproject_ids ) { ?>
 	<div class="col-md-12 col-xs-12">
 	<div class="space-10"></div>
-	<form id="manage-project-update-subprojects-form" action="manage_proj_update_children.php" method="post">
+	<form id="manage-project-update-subprojects-form" action="<?php echo helper_mantis_url("manage_proj_update_children.php"); ?>" method="post">
 	<div class="widget-box widget-color-blue2">
 		<div class="widget-header widget-header-small">
 			<h4 class="widget-title lighter">
@@ -384,7 +384,7 @@ if ( config_get( 'subprojects_enabled') == ON ) {
 			</h4>
 		</div>
 		<div class="widget-toolbox padding-8 clearfix">
-	<form id="manage-project-category-copy-form" method="post" action="manage_proj_cat_copy.php" class="form-inline">
+	<form id="manage-project-category-copy-form" method="post" action="<?php echo helper_mantis_url("manage_proj_cat_copy.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php echo form_security_field( 'manage_proj_cat_copy' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -447,7 +447,7 @@ if ( config_get( 'subprojects_enabled') == ON ) {
 </div>
 </div>
 <div class="widget-toolbox padding-8 clearfix">
-	<form id="project-add-category-form" method="post" action="manage_proj_cat_add.php" class="form-inline">
+	<form id="project-add-category-form" method="post" action="<?php echo helper_mantis_url("manage_proj_cat_add.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php echo form_security_field( 'manage_proj_cat_add' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -473,7 +473,7 @@ if ( config_get( 'subprojects_enabled') == ON ) {
 			</h4>
 		</div>
 		<div class="widget-toolbox padding-8 clearfix">
-	<form id="manage-project-version-copy-form" method="post" action="manage_proj_ver_copy.php" class="form-inline">
+	<form id="manage-project-version-copy-form" method="post" action="<?php echo helper_mantis_url("manage_proj_ver_copy.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php echo form_security_field( 'manage_proj_ver_copy' ) ?>
 			<input type="hidden" class="form-control input-sm" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -547,7 +547,7 @@ if ( config_get( 'subprojects_enabled') == ON ) {
 	</div>
 	</div>
 	<div class="widget-toolbox padding-8 clearfix">
-	<form id="manage-project-add-version-form" method="post" action="manage_proj_ver_add.php" class="form-inline">
+	<form id="manage-project-add-version-form" method="post" action="<?php echo helper_mantis_url("manage_proj_ver_add.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php echo form_security_field( 'manage_proj_ver_add' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -579,7 +579,7 @@ if( access_has_project_level( config_get( 'custom_field_link_threshold' ), $f_pr
 		</h4>
 	</div>
 	<div class="widget-toolbox padding-8 clearfix">
-	<form id="manage-project-custom-field-copy-form" method="post" action="manage_proj_custom_field_copy.php" class="form-inline">
+	<form id="manage-project-custom-field-copy-form" method="post" action="<?php echo helper_mantis_url("manage_proj_custom_field_copy.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php echo form_security_field( 'manage_proj_custom_field_copy' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -614,7 +614,7 @@ if( access_has_project_level( config_get( 'custom_field_link_threshold' ), $f_pr
 				<td><?php echo '<a href="manage_custom_field_edit_page.php?field_id=' . $t_field_id . '">' .
 						custom_field_get_display_name( $t_desc['name'] ) . '</a>' ?></td>
 				<td class="center">
-					<form method="post" action="manage_proj_custom_field_update.php" class="form-inline">
+					<form method="post" action="<?php echo helper_mantis_url("manage_proj_custom_field_update.php"); ?>" class="form-inline">
 						<fieldset>
 							<?php echo form_security_field( 'manage_proj_custom_field_update' ) ?>
 							<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -641,7 +641,7 @@ if( access_has_project_level( config_get( 'custom_field_link_threshold' ), $f_pr
 	}
 	if( $t_custom_field_count > $t_linked_count ) { ?>
 	<div class="widget-toolbox padding-8 clearfix">
-	<form method="post" action="manage_proj_custom_field_add_existing.php" class="form-inline">
+	<form method="post" action="<?php echo helper_mantis_url("manage_proj_custom_field_add_existing.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php echo form_security_field( 'manage_proj_custom_field_add_existing' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -697,7 +697,7 @@ event_signal( 'EVENT_MANAGE_PROJECT_PAGE', array( $f_project_id ) );
 	</h4>
 </div>
 <div class="widget-toolbox padding-8 clearfix">
-	<form id="manage-project-users-copy-form" method="post" action="manage_proj_user_copy.php" class="form-inline">
+	<form id="manage-project-users-copy-form" method="post" action="<?php echo helper_mantis_url("manage_proj_user_copy.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php echo form_security_field( 'manage_proj_user_copy' ) ?>
 			<input type="hidden" name="project_id" value="<?php echo $f_project_id ?>" />
@@ -829,7 +829,7 @@ if( count( $t_users ) > 0 ) { ?>
 <div class="col-md-12 col-xs-12">
 	<div class="space-10"></div>
 	<div class="form-container">
-	<form id="manage-project-add-user-form" method="post" action="manage_proj_user_add.php">
+	<form id="manage-project-add-user-form" method="post" action="<?php echo helper_mantis_url("manage_proj_user_add.php"); ?>">
 	<div class="widget-box widget-color-blue2">
 		<div class="widget-header widget-header-small">
 			<h4 class="widget-title lighter">

@@ -230,13 +230,13 @@ if( !$f_temp_filter ) {
 
 # redirect to print_all or view_all page
 if( $f_print ) {
-	$t_redirect_url = 'print_all_bug_page.php';
+	$t_redirect_url = helper_mantis_url('print_all_bug_page.php');
 } else {
-	$t_redirect_url = 'view_all_bug_page.php';
+	$t_redirect_url = helper_mantis_url('view_all_bug_page.php');
 }
 
 if( $f_temp_filter ) {
 	$t_token_id = token_set( TOKEN_FILTER, json_encode( $t_setting_arr ) );
-	$t_redirect_url = $t_redirect_url . '?filter=' . $t_token_id;
+	$t_redirect_url = helper_mantis_url($t_redirect_url . '?filter=' . $t_token_id);
 }
 print_header_redirect( $t_redirect_url );

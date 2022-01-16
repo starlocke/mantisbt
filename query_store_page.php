@@ -85,7 +85,7 @@ if( $t_error_msg != null ) {
 ?>
 <div class="widget-body">
 	<div class="widget-main center">
-<form method="post" action="query_store.php" class="form-inline">
+<form method="post" action="<?php echo helper_mantis_url("query_store.php"); ?>" class="form-inline">
 <?php echo form_security_field( 'query_store' ) ?>
 <div class="space-10"></div>
 <label class="bold inline"> <?php echo lang_get( 'query_name_label' ) . lang_get( 'word_separator' ); ?> </label>
@@ -113,7 +113,7 @@ if( access_has_project_level( config_get( 'stored_query_create_shared_threshold'
 	<input type="submit" class="btn btn-primary btn-white btn-round" value="<?php print lang_get( 'save_query' ); ?>" />
 </form>
 <div class="space-10"></div>
-<form action="view_all_bug_page.php">
+<form action="<?php echo helper_mantis_url("view_all_bug_page.php"); ?>">
 <?php # CSRF protection not required here - form does not result in modifications ?>
 <input type="submit" class="btn btn-primary btn-white btn-round" value="<?php print lang_get( 'go_back' ); ?>" />
 </form>

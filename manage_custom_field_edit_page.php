@@ -72,7 +72,7 @@ $t_definition = custom_field_get_definition( $f_field_id );
 <div class="space-10"></div>
 
 <div id="manage-custom-field-update-div" class="form-container">
-<form id="manage-custom-field-update-form" method="post" action="manage_custom_field_update.php">
+<form id="manage-custom-field-update-form" method="post" action="<?php echo helper_mantis_url("manage_custom_field_update.php"); ?>">
 <div class="widget-box widget-color-blue2">
 <div class="widget-header widget-header-small">
 	<h4 class="widget-title lighter">
@@ -296,7 +296,7 @@ $t_definition = custom_field_get_definition( $f_field_id );
 
 <div class="col-md-12 col-xs-12">
 	<div class="space-10"></div>
-	<form method="post" action="manage_custom_field_delete.php" class="pull-right">
+	<form method="post" action="<?php echo helper_mantis_url("manage_custom_field_delete.php"); ?>" class="pull-right">
 		<fieldset>
 			<?php echo form_security_field( 'manage_custom_field_delete' ); ?>
 			<input type="hidden" name="field_id" value="<?php echo $f_field_id ?>" />
@@ -325,7 +325,7 @@ $t_definition = custom_field_get_definition( $f_field_id );
 		<div class="widget-main no-padding">
 			<div class="table-responsive">
 			<table class="table table-bordered table-condensed table-striped">
-			<form id="manage-custom-field-link-form" method="post" action="manage_custom_field_proj_add.php">
+			<form id="manage-custom-field-link-form" method="post" action="<?php echo helper_mantis_url("manage_custom_field_proj_add.php"); ?>">
 			<div class="form-container" id="manage-custom-field-link-div">
 				<tr id="custom-field-link-project">
 				<td class="category">

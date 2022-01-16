@@ -71,9 +71,9 @@ helper_ensure_confirmed( lang_get( 'confirm_custom_field_unlinking' ) .
 	lang_get( 'field_remove_button' ) );
 
 if( $f_return == 'custom_field' ) {
-	$t_redirect_url = 'manage_custom_field_edit_page.php?field_id=' . $f_field_id;
+	$t_redirect_url = helper_mantis_url('manage_custom_field_edit_page.php?field_id=' . $f_field_id);
 } else {
-	$t_redirect_url = 'manage_proj_edit_page.php?project_id=' . $f_project_id;
+	$t_redirect_url = helper_mantis_url('manage_proj_edit_page.php?project_id=' . $f_project_id);
 }
 
 custom_field_unlink( $f_field_id, $f_project_id );

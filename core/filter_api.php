@@ -2451,9 +2451,9 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 
 	$t_view_type = $t_filter['_view_type'];
 
-	$t_action = 'view_all_set.php?f=3';
+	$t_action = helper_mantis_url('view_all_set.php?f=3');
 	if( $p_for_screen == false ) {
-		$t_action = 'view_all_set.php';
+		$t_action = helper_mantis_url('view_all_set.php');
 	}
 	if( $p_expanded ) {
 		# in expanded form, all field are sent
@@ -2594,7 +2594,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 	echo '<div class="btn-group">';
 
 	if( access_has_project_level( config_get( 'stored_query_create_threshold' ) ) ) { ?>
-		<form class="form-inline pull-left" method="post" name="save_query" action="query_store_page.php">
+		<form class="form-inline pull-left" method="post" name="save_query" action="<?php echo helper_mantis_url('query_store_page.php') ?>">
 			<?php # CSRF protection not required here - form does not result in modifications ?>
 			<input type="submit" name="save_query_button" class="btn btn-primary btn-white btn-sm btn-round"
 				value="<?php echo lang_get( 'save_query' )?>" />
@@ -2602,7 +2602,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 	<?php
 	}
 	if( count( $t_stored_queries_arr ) > 0 ) { ?>
-		<form id="filter-queries-form" class="form-inline pull-left padding-left-8"  method="get" name="list_queries<?php echo $t_form_name_suffix;?>" action="view_all_set.php">
+		<form id="filter-queries-form" class="form-inline pull-left padding-left-8"  method="get" name="list_queries<?php echo $t_form_name_suffix;?>" action="<?php echo helper_mantis_url('view_all_set.php') ?>">
 			<?php # CSRF protection not required here - form does not result in modifications ?>
 			<input type="hidden" name="type" value="3" />
 			<select name="source_query_id">
@@ -2620,7 +2620,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		</form>
 	<?php
 	} else { ?>
-		<form class="form-inline pull-left" method="get" name="reset_query" action="view_all_set.php">
+		<form class="form-inline pull-left" method="get" name="reset_query" action="<?php echo helper_mantis_url('view_all_set.php') ?>">
 			<?php # CSRF protection not required here - form does not result in modifications ?>
 			<input type="hidden" name="type" value="3" />
 			<input type="hidden" name="source_query_id" value="-1" />

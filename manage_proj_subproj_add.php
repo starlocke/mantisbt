@@ -72,7 +72,7 @@ project_hierarchy_add( $f_subproject_id, $f_project_id );
 
 form_security_purge( 'manage_proj_subproj_add' );
 
-$t_redirect_url = 'manage_proj_edit_page.php?project_id=' . $f_project_id;
+$t_redirect_url = helper_mantis_url('manage_proj_edit_page.php?project_id=' . $f_project_id);
 
 layout_page_header( null, $t_redirect_url );
 

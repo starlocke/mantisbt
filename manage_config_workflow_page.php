@@ -488,7 +488,7 @@ foreach ( $t_status_arr as $t_status => $t_status_label ) {
 	}
 }
 
-echo '<form id="workflow_config_action" method="post" action="manage_config_workflow_set.php">' . "\n";
+echo '<form id="workflow_config_action" method="post" action="<?php echo helper_mantis_url("manage_config_workflow_set.php"); ?>">' . "\n";
 echo '<fieldset>';
 echo form_security_field( 'manage_config_workflow_set' );
 echo '</fieldset>';
@@ -560,7 +560,7 @@ if( $g_can_change_flags ) {
 
 	if( 0 < count( $g_overrides ) ) {
 		echo '<div class="pull-right">';
-		echo '<form id="mail_config_action" method="post" action="manage_config_revert.php">' ."\n";
+		echo '<form id="mail_config_action" method="post" action="<?php echo helper_mantis_url("manage_config_revert.php"); ?>">' ."\n";
 		echo '<fieldset>' . "\n";
 		echo form_security_field( 'manage_config_revert' );
 		echo '<input name="revert" type="hidden" value="' . implode( ',', $g_overrides ) . '" />';

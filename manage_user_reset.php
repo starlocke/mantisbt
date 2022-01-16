@@ -71,7 +71,7 @@ if( $t_reset ) {
 	$t_result = user_reset_failed_login_count_to_zero( $f_user_id );
 }
 
-$t_redirect_url = 'manage_user_page.php';
+$t_redirect_url = helper_mantis_url('manage_user_page.php');
 
 form_security_purge( 'manage_user_reset' );
 

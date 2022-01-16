@@ -339,7 +339,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 
 form_security_purge( $t_form_name );
 
-$t_redirect_url = 'view_all_bug_page.php';
+$t_redirect_url = helper_mantis_url('view_all_bug_page.php');
 
 if( count( $t_failed_ids ) > 0 ) {
 	layout_page_header();

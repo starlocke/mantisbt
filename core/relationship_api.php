@@ -936,7 +936,7 @@ function relationship_view_box( $p_bug_id ) {
 
 			if( $t_can_update ) {
 			?>
-		<form method="post" action="bug_relationship_add.php" class="form-inline noprint">
+		<form method="post" action="<?php echo helper_mantis_url("bug_relationship_add.php"); ?>" class="form-inline noprint">
 		<?php echo form_security_field( 'bug_relationship_add' ) ?>
 		<input type="hidden" name="src_bug_id" value="<?php echo $p_bug_id?>" />
 		<label class="inline"><?php echo lang_get( 'this_bug' ) ?>&#160;&#160;</label>

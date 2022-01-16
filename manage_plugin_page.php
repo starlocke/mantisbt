@@ -81,7 +81,7 @@ if( 0 < count( $t_plugins_installed ) ) {
 <div class="space-10"></div>
 <div class="form-container">
 
-	<form action="manage_plugin_update.php" method="post">
+	<form action="<?php echo helper_mantis_url("manage_plugin_update.php"); ?>" method="post">
 		<fieldset>
 		<?php echo form_security_field( 'manage_plugin_update' ) ?>
 

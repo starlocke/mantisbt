@@ -521,7 +521,7 @@ if( $t_read_write_access ) {
 ?>
 
 <div id="config-edit-div">
-<form id="config_set_form" method="post" action="adm_config_set.php">
+<form id="config_set_form" method="post" action="<?php echo helper_mantis_url("adm_config_set.php"); ?>">
 
 		<!-- Title -->
 		<div class="widget-box widget-color-blue2">

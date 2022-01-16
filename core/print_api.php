@@ -115,6 +115,8 @@ function print_header_redirect( $p_url, $p_die = true, $p_sanitize = false, $p_a
 		}
 	}
 
+	// var_dump($t_url);
+	// exit;
 	$t_url = string_prepare_header( $t_url );
 
 	# don't send more headers if they have already been sent
@@ -358,7 +360,7 @@ function print_reporter_option_list( $p_user_id, $p_project_id = null ) {
  */
 function print_tag_attach_form( $p_bug_id, $p_string = '' ) {
 ?>
-	<form method="post" action="tag_attach.php" class="form-inline">
+	<form method="post" action="<?php echo helper_mantis_url("tag_attach.php"); ?>" class="form-inline">
 	<?php echo form_security_field( 'tag_attach' )?>
 	<label class="inline small"><?php echo sprintf( lang_get( 'tag_separate_by' ), config_get( 'tag_separator' ) )?></label>
 	<input type="hidden" name="bug_id" value="<?php echo $p_bug_id?>" class="input-sm" />

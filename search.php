@@ -161,9 +161,9 @@ gpc_set_cookie( config_get_global( 'view_all_cookie' ), $t_row_id, time()+config
 
 # redirect to print_all or view_all page
 if( $f_print ) {
-	$t_redirect_url = 'print_all_bug_page.php';
+	$t_redirect_url = helper_mantis_url('print_all_bug_page.php');
 } else {
-	$t_redirect_url = 'view_all_bug_page.php';
+	$t_redirect_url = helper_mantis_url('view_all_bug_page.php');
 }
 
 print_header_redirect( $t_redirect_url );

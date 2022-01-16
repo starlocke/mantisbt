@@ -266,7 +266,7 @@ $t_user_count = count( $t_users );
 		</div>
 		<?php } ?>
 	<div class="pull-right">
-	<form id="manage-user-filter" method="post" action="manage_user_page.php" class="form-inline">
+	<form id="manage-user-filter" method="post" action="<?php echo helper_mantis_url("manage_user_page.php"); ?>" class="form-inline">
 		<fieldset>
 			<?php # CSRF protection not required here - form does not result in modifications ?>
 			<input type="hidden" name="sort" value="<?php echo $c_sort ?>" />
@@ -360,7 +360,7 @@ $t_user_count = count( $t_users );
 
 <div class="widget-toolbox padding-8 clearfix">
 	<div id="manage-user-edit-div" class="form-inline pull-left">
-		<form id="manage-user-edit-form" method="get" action="manage_user_edit_page.php" class="form-inline"
+		<form id="manage-user-edit-form" method="get" action="<?php echo helper_mantis_url("manage_user_edit_page.php"); ?>" class="form-inline"
 			<?php # CSRF protection not required here - form does not result in modifications ?>>
 			<label class="inline" for="username"><?php echo lang_get( 'search' ) ?></label>
 			<input id="username" type="text" name="username" class="input-sm" value="" />
